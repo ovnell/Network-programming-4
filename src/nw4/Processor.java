@@ -26,7 +26,6 @@ public class Processor extends Thread {
 				if (url == null) {
 					return;
 				}
-				System.out.println(url);
 
 				InputStream is = url.openStream();
 				Document doc = Jsoup.parse(is, "UTF-8", url.toString());

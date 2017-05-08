@@ -74,4 +74,20 @@ public class Spider {
 		return sb.toString();
 	}
 
+	public String getVisited() {
+		try {
+			for (Thread t : threads) {
+				t.join();
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+			System.exit(1);
+		}
+		
+		StringBuilder sb = new StringBuilder();
+		for (String s : visited) {
+			sb.append(s + "\n");
+		}
+		return sb.toString();
+	}
 }

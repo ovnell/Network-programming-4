@@ -19,7 +19,7 @@ public class Spider {
 
 	public Spider(int visit) {
 		nbrToVisit = visit;
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i++) {	// 10 trådar.
 			Thread t = new Processor(this);
 			threads.add(t);
 			t.start();
@@ -28,8 +28,6 @@ public class Spider {
 
 	public synchronized URL getNextURL() {
 		if (nbrVisited == nbrToVisit) {
-			System.out.println(getVisitedSites());
-			System.out.println(getMails());
 			return null;
 		}
 		while (remainingURLs.isEmpty()) {

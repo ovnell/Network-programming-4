@@ -46,6 +46,7 @@ public class Spider {
 	}
 
 	public synchronized void addURL(URL url) {
+		// Kolla visited och remaining.
 		remainingURLs.add(url);
 		notifyAll();
 	}
